@@ -21,7 +21,7 @@ https://img.shields.io/github/downloads/NorahManeea/MarvelComics/total?label=Swi
 
 # Dependencies 
 * [Kingfisher](https://github.com/onevcat/Kingfisher)
-* [Kingfisher](https://github.com/Alamofire/Alamofire)
+* [Alamofire](https://github.com/Alamofire/Alamofire)
 * [SwiftHash](https://github.com/onmyway133/SwiftHash)
 
 # Requirements
