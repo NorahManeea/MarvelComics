@@ -98,8 +98,25 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         //Create user
         Auth.auth().createUser(withEmail: email , password: password) { authResult, error in
           //Check for error
-            if  error != nil{
+           /* if  error != nil{
                 self.ShowError("Error in Registration")
+            }*/
+            if error != nil {
+                if error?.localizedDescription == "The email address is already in use by another account." {
+                    
+                    //  display alert
+                    //  Handling already existing email
+                    let alert = UIAlertController(title: "Something went wrong!", message: "The email address is already in use by another account, please try again." , preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
+                
+                if !CheckInternet.Connection(){
+                    Alert.showBasicAlert(on: self, with: "WiFi is Turned Off", message: "Please turn on cellular data or use Wi-Fi to access data.")
+                }
+                
+                print(error)
             }
             else {
                 self.activityInd.stopAnimating()

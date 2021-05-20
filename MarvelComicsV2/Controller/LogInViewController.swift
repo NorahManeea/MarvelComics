@@ -24,10 +24,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         SetUp()
         emailTextField.delegate = self
         passwordTextField.delegate = self
-
+        
     }
     override func viewWillAppear(_ animated: Bool) {
-         super.viewWillAppear(animated)
+        super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
     }
     override func viewWillDisappear(_ animated: Bool)
@@ -46,9 +46,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         activityInd.isHidden = true
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-     self.view.endEditing(true)
- }
-
+        self.view.endEditing(true)
+    }
+    
     //MARK: - Log in Button Tapped
     
     func ValidateFields() -> String? {
@@ -67,42 +67,55 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         setContinueButton(enabled: false)
         activityInd.startAnimating()
         activityInd.isHidden = false
-       
-
+        
+        
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         //Signing in the user
         Auth.auth().signIn(withEmail: email, password: password) {
             (result, error) in
-            if error != nil{
-                self.errorLabel.text = error!.localizedDescription
-                self.errorLabel.alpha = 1
+            /* if error != nil{
+             self.errorLabel.text = error!.localizedDescription
+             self.errorLabel.alpha = 1
+             }*/
+            guard self != nil else { return }
+            if error != nil {
+                print(error)
+                
+                if error?.localizedDescription == "There is no user record corresponding to this identifier. The user may have been deleted." {
+                    
+                    Alert.showBasicAlert(on: self, with: "Something went wrong!", message: "There is no user record coressponding to this email. Please use a registered email and try again.")
+                }
+                
+                if !CheckInternet.Connection(){
+                    Alert.showBasicAlert(on: self, with: "WiFi is Turned Off", message: "Please turn on cellular data or use Wi-Fi to access data.")
+                }
             }
             else {
                 let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? ComicsHomeViewController
-
+                
                 self.view.window?.rootViewController = homeViewController
                 self.view.window?.makeKeyAndVisible()
                 //
                 
-               
+                
             }
         }
-
+        
     }
     
     @IBAction func SignUpButton(_ sender: Any) {
         self.performSegue(withIdentifier: "signUp", sender: self)
-       
+        
     }
     func setContinueButton(enabled:Bool) {
-          if enabled {
-              logInButton.alpha = 1.0
-              logInButton.isEnabled = true
-          } else {
-              logInButton.alpha = 0.5
-              logInButton.isEnabled = false
-          }
-      }
+        if enabled {
+            logInButton.alpha = 1.0
+            logInButton.isEnabled = true
+        } else {
+            logInButton.alpha = 0.5
+            logInButton.isEnabled = false
+        }
+    }
     
 }
