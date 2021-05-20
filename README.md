@@ -6,8 +6,8 @@ https://img.shields.io/github/downloads/NorahManeea/MarvelComics/total?label=Swi
 
 # App Workflow
 ## Registration 
-<img src="https://user-images.githubusercontent.com/78898254/118908403-38c6d900-b8d6-11eb-9c46-b630652c62aa.png" width="300" height="500"> <img src="https://user-images.githubusercontent.com/78898254/118908471-5ac05b80-b8d6-11eb-94a3-45df9a9d6027.png" width="400" height="500">
-<img src="https://user-images.githubusercontent.com/78898254/118908476-5c8a1f00-b8d6-11eb-9e2a-2895a4002c8c.png" width="400" height="600">
+<img src="https://user-images.githubusercontent.com/78898254/118908403-38c6d900-b8d6-11eb-9c46-b630652c62aa.png" width="300" height="500"> <img src="https://user-images.githubusercontent.com/78898254/118908471-5ac05b80-b8d6-11eb-94a3-45df9a9d6027.png" width="300" height="600">
+<img src="https://user-images.githubusercontent.com/78898254/118908476-5c8a1f00-b8d6-11eb-9e2a-2895a4002c8c.png" width="300" height="600">
 
 ## Home Page  
 <img src="https://user-images.githubusercontent.com/78898254/118908559-7fb4ce80-b8d6-11eb-8c4f-2e98af8b45fd.png" width="300" height="600">
