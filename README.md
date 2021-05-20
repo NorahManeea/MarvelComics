@@ -2,7 +2,8 @@
 IOS App - Explore the Marvel Comics.
 
 # Dependencies 
-* [https://github.com/onevcat/Kingfisher]
+* [Kingfisher](https://github.com/onevcat/Kingfisher)
+
 
 # Tools
 * Xcode
