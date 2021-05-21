@@ -17,6 +17,9 @@ class WebViewController: UIViewController {
 
     override func viewDidLoad() {
         //super.viewDidLoad()
+        if !CheckInternet.Connection(){
+            Alert.showBasicAlert(on: self, with: "WiFi is Turned Off", message: "Please turn on cellular data or use Wi-Fi to access data.")
+        }else{
         let url = URL(string: hero.urls.first!.url)
         let request = URLRequest(url: url!)
         title = hero.name
@@ -24,7 +27,7 @@ class WebViewController: UIViewController {
         webView.load(request)
 
     }
-
+    }
 }
 
 extension WebViewController: WKNavigationDelegate {

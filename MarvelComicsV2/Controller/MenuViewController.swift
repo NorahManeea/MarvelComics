@@ -21,6 +21,7 @@ class MenuViewController: UIViewController {
     }
    
     override func viewDidAppear(_ animated: Bool) {
+        // To Check if user logged In
         if let user = Auth.auth().currentUser {
             self.performSegue(withIdentifier: "toHome", sender: self)
             

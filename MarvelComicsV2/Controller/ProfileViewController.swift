@@ -18,7 +18,6 @@ class ProfileViewController: UIViewController {
          super.viewDidLoad()
          //navigationController?.navigationBar.isHidden = true
          setName()
-     
      }
      
      // MARK: - Logout Button

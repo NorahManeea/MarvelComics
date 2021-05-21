@@ -10,15 +10,15 @@ import FirebaseAuth
 import Firebase
 
 class SignUpViewController: UIViewController, UITextFieldDelegate{
-
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var activityInd: UIActivityIndicatorView!
     @IBOutlet weak var signUpButton: UIButton!
-   
+    
     @IBOutlet weak var errorLabel: UILabel!
-
+    
     
     
     var db: Firestore!
@@ -35,7 +35,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         SetUp()
     }
     override func viewWillAppear(_ animated: Bool) {
-         super.viewWillAppear(animated)
+        super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
     }
     override func viewWillDisappear(_ animated: Bool)
@@ -48,14 +48,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         errorLabel.alpha = 0
         activityInd.stopAnimating()
         activityInd.isHidden = true
-    //Style Elements
+        //Style Elements
         TextField.styleTextField(nameTextField)
         TextField.styleTextField(emailTextField)
         TextField.styleTextField(passwordTextField)
         TextField.styleFilledButton(signUpButton)
     }
     
-
+    
     //MARK: - Text Field
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -88,65 +88,48 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
             ShowError(error!)
         }
         else{
-           
+            
             let name = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
             
-        
-        //Create user
-        Auth.auth().createUser(withEmail: email , password: password) { authResult, error in
-          //Check for error
-           /* if  error != nil{
-                self.ShowError("Error in Registration")
-            }*/
-            if error != nil {
-                if error?.localizedDescription == "The email address is already in use by another account." {
-                    
-                    //  display alert
-                    //  Handling already existing email
-                    let alert = UIAlertController(title: "Something went wrong!", message: "The email address is already in use by another account, please try again." , preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                    
-                }
-                
-                if !CheckInternet.Connection(){
-                    Alert.showBasicAlert(on: self, with: "WiFi is Turned Off", message: "Please turn on cellular data or use Wi-Fi to access data.")
-                }
-                
-                print(error)
-            }
-            else {
-                self.activityInd.stopAnimating()
-                self.activityInd.isHidden = true
-                //User was created successfully
-                
-                //let db = Firestore.firestore()
-                /*db.collection("users").addDocument(data: ["name": name, "uid": authResult!.user.uid]) { (error) in
-                    if error != nil{
-                    //Show error message
-                        self.ShowError("error saving user data")
+            
+            //Create user
+            Auth.auth().createUser(withEmail: email , password: password) { authResult, error in
+                //Check for error
+                if error != nil {
+                    if error?.localizedDescription == "The email address is already in use by another account." {
+                        
+                        //  display alert
+                        //  Handling already existing email
+                        let alert = UIAlertController(title: "Something went wrong!", message: "The email address is already in use by another account, please try again." , preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        
                     }
-        }*/
-                let uid = authResult!.user.uid
-                self.db.collection("users").document(uid).setData([
-                    "email": self.emailTextField.text,
-                    "name": self.nameTextField.text
-                ])
-                //transition to home screen
-               // self.activityInd.startAnimating()
-               // self.activityInd.isHidden = false
-         
-                self.TransitionToHome()
+                    
+                    if !CheckInternet.Connection(){
+                        Alert.showBasicAlert(on: self, with: "WiFi is Turned Off", message: "Please turn on cellular data or use Wi-Fi to access data.")
+                    }
+                    
+                    print(error)
+                }
+                else {
+                    self.activityInd.stopAnimating()
+                    self.activityInd.isHidden = true
+                    let uid = authResult!.user.uid
+                    self.db.collection("users").document(uid).setData([
+                        "email": self.emailTextField.text,
+                        "name": self.nameTextField.text
+                    ])
+                    //transition to home screen
+                    self.TransitionToHome()
+                }
+            }
         }
-        
-     
     }
-    }
-    }
-
+    
     func ShowError(_ message:String){
         errorLabel.text = message
         errorLabel.alpha = 1
@@ -161,21 +144,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     
     //MARK:- Enables or Disables the SignUp Button.
     func setContinueButton(enabled:Bool) {
-          if enabled {
-              signUpButton.alpha = 1.0
-              signUpButton.isEnabled = true
-          } else {
-              signUpButton.alpha = 0.5
-              signUpButton.isEnabled = false
-          }
-      }
-    //MARK: - Save User Profile Function
-   /* func SaveProfile(name: String, email: String, completion: @escaping ((_ success: Bool)->())){
-        guard let uid = Auth.auth().currentUser?.uid else{return}
-        let databaseRef = Database.database().reference().child("users/profile/\(uid)")
-        let userObject = ["name" : name, "email" : email] as [String:Any]
-        databaseRef.setValue(userObject) { (error, ref) in
-            completion(error == nil)
+        if enabled {
+            signUpButton.alpha = 1.0
+            signUpButton.isEnabled = true
+        } else {
+            signUpButton.alpha = 0.5
+            signUpButton.isEnabled = false
         }
-}*/
+    }
+    
 }

@@ -25,7 +25,7 @@ class ComicsHomeViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        label.text = "Looking for heroes! Hold.."
+        label.text = "Looking for heroes! Wait.."
         loadHeroes()
         self.navigationItem.title = "Marvel Comics"
         
@@ -41,7 +41,6 @@ class ComicsHomeViewController: UITableViewController {
                 print(self.heroes.count)
                 DispatchQueue.main.async {
                     self.loadingHeroes = false
-                    //self.label.text = "Nao foram encontrado herois com o nome \(self.name!)."
                     self.tableView.reloadData()
                 }
             }
@@ -64,7 +63,7 @@ class ComicsHomeViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ComicsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "comicsCell", for: indexPath) as! ComicsTableViewCell
         
 
         let hero = heroes[indexPath.row]
@@ -73,17 +72,14 @@ class ComicsHomeViewController: UITableViewController {
 
         return cell
     }
-
+ 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == heroes.count - 10 && !loadingHeroes && heroes.count != total {
             currentPage += 1
             loadHeroes()
         }
     }
-    // MARK: - Add to Favorite Function
     
-    @objc func addToFavorite(sender: UIButton){
-        sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-    }
+ 
 }
 

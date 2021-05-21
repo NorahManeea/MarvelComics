@@ -17,10 +17,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var errorLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationController?.navigationBar.isHidden = true;
-        
-        
-        // Do any additional setup after loading the view.
+  
         SetUp()
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -35,6 +32,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         super.viewWillDisappear(animated)
         self.navigationController?.isNavigationBarHidden = false
     }
+    //MARK: - Set Up Text Fields
     func SetUp(){
         errorLabel.alpha = 0
         
@@ -49,8 +47,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    //MARK: - Log in Button Tapped
-    
+    //MARK: - Function to validate the fields
     func ValidateFields() -> String? {
         
         //Check all fields are filled in
@@ -60,6 +57,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         }
         return nil
     }
+    //MARK: - Log in Button Tapped
     @IBAction func LogInButton(_ sender: Any) {
         
         emailTextField.endEditing(true)
@@ -74,10 +72,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         //Signing in the user
         Auth.auth().signIn(withEmail: email, password: password) {
             (result, error) in
-            /* if error != nil{
-             self.errorLabel.text = error!.localizedDescription
-             self.errorLabel.alpha = 1
-             }*/
             guard self != nil else { return }
             if error != nil {
                 print(error)
@@ -86,7 +80,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                     
                     Alert.showBasicAlert(on: self, with: "Something went wrong!", message: "There is no user record coressponding to this email. Please use a registered email and try again.")
                 }
-                
                 if !CheckInternet.Connection(){
                     Alert.showBasicAlert(on: self, with: "WiFi is Turned Off", message: "Please turn on cellular data or use Wi-Fi to access data.")
                 }
@@ -96,18 +89,12 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                 
                 self.view.window?.rootViewController = homeViewController
                 self.view.window?.makeKeyAndVisible()
-                //
-                
-                
+           
             }
         }
         
     }
     
-    @IBAction func SignUpButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "signUp", sender: self)
-        
-    }
     func setContinueButton(enabled:Bool) {
         if enabled {
             logInButton.alpha = 1.0

@@ -9,8 +9,6 @@
 import Foundation
 
 struct Constants {
-    static let isUserLoggedIn = "userLogin"
-    
     struct Storyboard{
         static let homeViewController = "HomeVC"
     }

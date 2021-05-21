@@ -132,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				0CA938CB26540CC80084F349 /* MarvelComicsV2 */,
-				0CA939182654115B0084F349 /* Control */,
 				0CA938E226540CCA0084F349 /* MarvelComicsV2Tests */,
 				0CA938ED26540CCA0084F349 /* MarvelComicsV2UITests */,
 				0CA938CA26540CC80084F349 /* Products */,
@@ -155,9 +154,10 @@
 			isa = PBXGroup;
 			children = (
 				0CA938FF26540F870084F349 /* Delegates */,
+				0CA939182654115B0084F349 /* Model */,
+				0CA9390726540F9D0084F349 /* View */,
 				0CA9390326540F910084F349 /* Controller */,
 				0C0D88F9265414C100C27D6E /* Helpers */,
-				0CA9390726540F9D0084F349 /* View */,
 				0CA938DA26540CC90084F349 /* Info.plist */,
 				0C774F0826541A7A00D71ED6 /* GoogleService-Info.plist */,
 			);
@@ -215,13 +215,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		0CA939182654115B0084F349 /* Control */ = {
+		0CA939182654115B0084F349 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				0CA9390E265410EA0084F349 /* MarvelAPI.swift */,
 				0CA93913265411500084F349 /* MarvelClasses.swift */,
 			);
-			path = Control;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0FBE47FDAA2045A58298029C /* Pods */ = {

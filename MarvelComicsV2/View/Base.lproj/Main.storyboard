@@ -132,8 +132,8 @@
                                     <constraint firstAttribute="height" constant="21" id="Wrh-9X-Ozx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <color key="highlightedColor" systemColor="systemRedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="P9o-sG-pzB">
                                 <rect key="frame" x="85" y="832" width="244" height="30"/>
@@ -373,8 +373,8 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="15e-Og-A4E">
-                                <rect key="frame" x="197" y="411" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="15e-Og-A4E">
+                                <rect key="frame" x="197" y="397" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.81368178130000002" green="0.72198742630000001" blue="0.34893006090000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
@@ -399,9 +399,9 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pRQ-HZ-hzo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="161" id="oah-Jq-NTX" customClass="ComicsTableViewCell" customModule="MarvelComicsV2" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="comicsCell" rowHeight="161" id="oah-Jq-NTX" customClass="ComicsTableViewCell" customModule="MarvelComicsV2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="161"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oah-Jq-NTX" id="umb-yy-Bf8">
@@ -430,18 +430,6 @@
                                             <rect key="frame" x="197" y="70.5" width="20" height="20"/>
                                             <color key="color" red="0.81368178130000002" green="0.72198742630000001" blue="0.34893006090000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </activityIndicatorView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnV-QB-SB8">
-                                            <rect key="frame" x="356" y="19" width="30" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="09r-wl-bql"/>
-                                                <constraint firstAttribute="width" constant="30" id="NaS-a3-hHL"/>
-                                            </constraints>
-                                            <color key="tintColor" red="0.81368178130000002" green="0.72198742630000001" blue="0.34893006090000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <state key="normal" image="star" catalog="system"/>
-                                            <connections>
-                                                <action selector="favoriteTapped:" destination="oah-Jq-NTX" eventType="touchUpInside" id="F1c-gE-LsK"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="BA8-GX-Te1" firstAttribute="top" secondItem="trA-0p-OQN" secondAttribute="bottom" constant="-3.5" id="8Ld-Yb-8eY"/>
@@ -450,10 +438,8 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="trA-0p-OQN" secondAttribute="trailing" id="JLk-qj-4eG"/>
                                         <constraint firstItem="ULx-7X-Lbz" firstAttribute="top" secondItem="umb-yy-Bf8" secondAttribute="top" constant="21" id="Kah-P4-hxP"/>
                                         <constraint firstItem="trA-0p-OQN" firstAttribute="top" secondItem="umb-yy-Bf8" secondAttribute="topMargin" constant="22" id="L7H-iU-Vqf"/>
-                                        <constraint firstItem="VnV-QB-SB8" firstAttribute="top" secondItem="umb-yy-Bf8" secondAttribute="topMargin" constant="8" id="OUe-DH-22w"/>
                                         <constraint firstItem="nkJ-hq-Trr" firstAttribute="leading" secondItem="ULx-7X-Lbz" secondAttribute="trailing" constant="20" id="Rbf-aM-xo2"/>
                                         <constraint firstItem="nkJ-hq-Trr" firstAttribute="top" secondItem="trA-0p-OQN" secondAttribute="bottom" constant="8" id="UBS-S7-GDe"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="VnV-QB-SB8" secondAttribute="trailing" constant="8" id="WQt-4T-ZxP"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="nkJ-hq-Trr" secondAttribute="bottom" constant="50" id="bVt-JH-zGE"/>
                                         <constraint firstAttribute="bottom" secondItem="ULx-7X-Lbz" secondAttribute="bottom" constant="21" id="ddP-UG-T5o"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="nkJ-hq-Trr" secondAttribute="trailing" id="mES-La-aDH"/>
@@ -465,7 +451,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="activityInd" destination="BA8-GX-Te1" id="aTK-V4-vgS"/>
-                                    <outlet property="favoriteButton" destination="VnV-QB-SB8" id="noB-Hf-fPa"/>
                                     <outlet property="ivThumb" destination="ULx-7X-Lbz" id="pis-Cd-HnP"/>
                                     <outlet property="lbDescription" destination="nkJ-hq-Trr" id="qTS-ua-uu5"/>
                                     <outlet property="lbName" destination="trA-0p-OQN" id="oD1-v6-VN7"/>
@@ -531,8 +516,8 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="psc-i7-K8N">
                                 <rect key="frame" x="47" y="633" width="320" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <color key="highlightedColor" systemColor="systemRedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="yPs-86-FUm">
                                 <rect key="frame" x="85" y="832" width="240" height="30"/>
@@ -638,12 +623,14 @@
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="rec2" width="332" height="64"/>
-        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
