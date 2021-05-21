@@ -15,7 +15,8 @@ IOS App - Explore the Marvel Comics.
 ## User Profile  
 <img src="https://user-images.githubusercontent.com/78898254/118908619-9bb87000-b8d6-11eb-860b-87a26db1b743.png" width="240" height="500"> <img src="https://user-images.githubusercontent.com/78898254/118908625-9e1aca00-b8d6-11eb-8934-c1e22204b6ee.png" width="240" height="500">
 
-
+## Check Network Connection  
+<img src="https://user-images.githubusercontent.com/78898254/119089118-80289480-b9be-11eb-8ebf-ba0742a1715c.png" width="240" height="500">
 
 
 # Dependencies 
