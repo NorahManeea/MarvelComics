@@ -2,8 +2,6 @@
 IOS App - Explore the Marvel Comics.  
 ![GitHub all releases](https://img.shields.io/github/downloads/NorahManeea/MarvelComics/total?label=Swift&logo=swift) 
 
-# Features 
-* Allow User to read comics
 
 # App Workflow
 ## Registration  
