@@ -19,7 +19,6 @@ class ProfileViewController: UIViewController {
          //navigationController?.navigationBar.isHidden = true
          setName()
      }
-     
      // MARK: - Logout Button
      @IBAction func logoutTapped(_ sender: Any) {
          

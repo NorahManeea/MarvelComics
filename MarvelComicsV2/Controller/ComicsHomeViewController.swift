@@ -23,6 +23,7 @@ class ComicsHomeViewController: UITableViewController {
     var currentPage: Int = 0
     var total = 0
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         label.text = "Looking for heroes! Wait.."

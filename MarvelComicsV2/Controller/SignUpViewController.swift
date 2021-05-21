@@ -16,14 +16,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var activityInd: UIActivityIndicatorView!
     @IBOutlet weak var signUpButton: UIButton!
-    
     @IBOutlet weak var errorLabel: UILabel!
     
-    
-    
     var db: Firestore!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.navigationController?.navigationBar.isHidden = true;
@@ -112,7 +108,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                     if !CheckInternet.Connection(){
                         Alert.showBasicAlert(on: self, with: "WiFi is Turned Off", message: "Please turn on cellular data or use Wi-Fi to access data.")
                     }
-                    
                     print(error)
                 }
                 else {
