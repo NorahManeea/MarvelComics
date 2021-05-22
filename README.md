@@ -29,6 +29,17 @@ IOS App - Explore the Marvel Comics.
 * Xcode 10.0+
 * iOS 13.6+
 
+# Installation
+1. Install Xcode 11.3.1
+2. Install and setup CocoaPods running the following commands from the terminal:
+$ sudo gem install cocoapods or update the tool pod repo update  
+For more information go to [CocoaPods](https://www.cocoapods.org/)
+3. Before opening Xcode, cd into the project's folder then run the following command on your project directory:
+$ pod install
+4. After CocoaPods downloaded all the dependencies, you should open the .xcworkspace file.
+5. Finally, you should be able to proceed and compile the sources.
+
+
 
 # Tools
 * Xcode
