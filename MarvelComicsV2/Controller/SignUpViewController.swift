@@ -29,6 +29,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         emailTextField.delegate = self
         passwordTextField.delegate = self
         SetUp()
+        nameTextField.addTarget(self, action: #selector(CheckandDisplayError(text:)), for: .editingChanged)
+        emailTextField.addTarget(self, action: #selector(CheckandDisplayError(text:)), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(CheckandDisplayError(text:)), for: .editingChanged)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -62,12 +65,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         //Check all fields are filled in
         if nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+            error()
             return "Please Fill in all the fields"
         }
         //Check password if it secure or not
         let pass = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         if TextField.isPasswordValid(pass) == false{
             //Password is not secure
+            error()
             return "Password must be at least 8 character.\n*Contain a special character and number"
         }
         return nil
@@ -145,6 +150,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         } else {
             signUpButton.alpha = 0.5
             signUpButton.isEnabled = false
+        }
+    }
+    func error(){
+        setContinueButton(enabled: true)
+        self.activityInd.stopAnimating()
+        self.activityInd.isHidden = true
+        
+    }
+    @objc func CheckandDisplayError(text: UITextField){
+        if text.isEditing == true{
+            self.errorLabel.text = ""
         }
     }
     
