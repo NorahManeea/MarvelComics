@@ -32,9 +32,9 @@ class ProfileViewController: UIViewController {
                             UserDefaults.standard.removeObject(forKey: "uid")
                             do {
                                 try firebaseAuth.signOut()
-                                print("signed out")
+                                debugPrint("signed out")
                             } catch let signOutError as NSError {
-                                print ("Error signing out: %@", signOutError)
+                                debugPrint("Error signing out: %@", signOutError)
                             }
                             
                             //Direct to sign up and login page...
