@@ -26,7 +26,7 @@
 		0CA938EF26540CCA0084F349 /* MarvelComicsV2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA938EE26540CCA0084F349 /* MarvelComicsV2UITests.swift */; };
 		0CA9390F265410EA0084F349 /* MarvelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA9390E265410EA0084F349 /* MarvelAPI.swift */; };
 		0CA93914265411500084F349 /* MarvelClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA93913265411500084F349 /* MarvelClasses.swift */; };
-		0CC54108265BC72700657D12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C774F0826541A7A00D71ED6 /* GoogleService-Info.plist */; };
+		0CCC4851265BD438004B2FC3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CC89F5B265BD1F00072DE26 /* GoogleService-Info.plist */; };
 		0CE428922656911200323D60 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE428912656911200323D60 /* Alert.swift */; };
 		5C576E201F9A4E266F992A85 /* Pods_MarvelComicsV2_MarvelComicsV2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479F5A622E06C38F09A088A2 /* Pods_MarvelComicsV2_MarvelComicsV2UITests.framework */; };
 		716E70159910F5208BCA8E0A /* Pods_MarvelComicsV2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79110B2569145998665A3DA5 /* Pods_MarvelComicsV2Tests.framework */; };
@@ -77,6 +77,7 @@
 		0CA938F026540CCA0084F349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CA9390E265410EA0084F349 /* MarvelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPI.swift; sourceTree = "<group>"; };
 		0CA93913265411500084F349 /* MarvelClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelClasses.swift; sourceTree = "<group>"; };
+		0CC89F5B265BD1F00072DE26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0CE428912656911200323D60 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		45A5E518D75B84888792EA1A /* Pods-MarvelComicsV2-MarvelComicsV2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelComicsV2-MarvelComicsV2UITests.release.xcconfig"; path = "Target Support Files/Pods-MarvelComicsV2-MarvelComicsV2UITests/Pods-MarvelComicsV2-MarvelComicsV2UITests.release.xcconfig"; sourceTree = "<group>"; };
 		479F5A622E06C38F09A088A2 /* Pods_MarvelComicsV2_MarvelComicsV2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelComicsV2_MarvelComicsV2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +132,7 @@
 		0CA938C026540CC80084F349 = {
 			isa = PBXGroup;
 			children = (
+				0CC89F5B265BD1F00072DE26 /* GoogleService-Info.plist */,
 				0CA938CB26540CC80084F349 /* MarvelComicsV2 */,
 				0CA938E226540CCA0084F349 /* MarvelComicsV2Tests */,
 				0CA938ED26540CCA0084F349 /* MarvelComicsV2UITests */,
@@ -356,7 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CA938D926540CC90084F349 /* LaunchScreen.storyboard in Resources */,
-				0CC54108265BC72700657D12 /* GoogleService-Info.plist in Resources */,
+				0CCC4851265BD438004B2FC3 /* GoogleService-Info.plist in Resources */,
 				0CA938D626540CC90084F349 /* Assets.xcassets in Resources */,
 				0CA938D426540CC80084F349 /* Main.storyboard in Resources */,
 			);
