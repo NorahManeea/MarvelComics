@@ -14,8 +14,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var logInButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true;
-
+        
         TextField.styleFilledButton(signUpButton)
         TextField.styleFilledButton(logInButton)
     }

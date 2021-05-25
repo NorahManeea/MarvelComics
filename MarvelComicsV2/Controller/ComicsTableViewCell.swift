@@ -13,18 +13,14 @@ class ComicsTableViewCell: UITableViewCell {
     @IBOutlet weak var ivThumb: UIImageView!
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbDescription: UILabel!
-   
-    
-
     @IBOutlet weak var activityInd: UIActivityIndicatorView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
 
     func prepareHero(with hero: Hero) {

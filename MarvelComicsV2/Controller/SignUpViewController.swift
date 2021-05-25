@@ -19,7 +19,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var errorLabel: UILabel!
     
     var db: Firestore!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.navigationController?.navigationBar.isHidden = true;
@@ -33,15 +33,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         emailTextField.addTarget(self, action: #selector(CheckandDisplayError(text:)), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(CheckandDisplayError(text:)), for: .editingChanged)
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
-    }
-    override func viewWillDisappear(_ animated: Bool)
-    {
-        super.viewWillDisappear(animated)
-        self.navigationController?.isNavigationBarHidden = false
-    }
+    /*
+     override func viewWillAppear(_ animated: Bool) {
+     super.viewWillAppear(animated)
+     self.navigationController?.isNavigationBarHidden = true
+     }
+     override func viewWillDisappear(_ animated: Bool)
+     {
+     super.viewWillDisappear(animated)
+     self.navigationController?.isNavigationBarHidden = false
+     }*/
+    
     func SetUp(){
         //Hide Error Label and activityInd
         errorLabel.alpha = 0
