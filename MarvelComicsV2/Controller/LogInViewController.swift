@@ -38,6 +38,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         activityInd.hidesWhenStopped = true
         activityInd.isHidden = true
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField{
             passwordTextField.becomeFirstResponder()

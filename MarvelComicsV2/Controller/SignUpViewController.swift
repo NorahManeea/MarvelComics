@@ -33,17 +33,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         emailTextField.addTarget(self, action: #selector(CheckandDisplayError(text:)), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(CheckandDisplayError(text:)), for: .editingChanged)
     }
-    /*
-     override func viewWillAppear(_ animated: Bool) {
-     super.viewWillAppear(animated)
-     self.navigationController?.isNavigationBarHidden = true
-     }
-     override func viewWillDisappear(_ animated: Bool)
-     {
-     super.viewWillDisappear(animated)
-     self.navigationController?.isNavigationBarHidden = false
-     }*/
-    
+
     func SetUp(){
         //Hide Error Label and activityInd
         errorLabel.alpha = 0
@@ -57,7 +47,18 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     }
     
     
-    //MARK: - Text Field
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTextField{
+            emailTextField.becomeFirstResponder()
+        }
+        else if textField == emailTextField{
+            passwordTextField.becomeFirstResponder()
+        }
+        else{
+            view.endEditing(true)
+        }
+        return true
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
@@ -95,9 +96,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
             let name = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            
-            
+
             //Create user
             Auth.auth().createUser(withEmail: email , password: password) { authResult, error in
                 //Check for error
